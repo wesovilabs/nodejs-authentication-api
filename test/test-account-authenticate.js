@@ -69,6 +69,22 @@ context('Account Authentication Service',function(){
 
         });
 
+
+        context('Check response when user is not registered yet..', function () {
+            it('should response Not found & return a error response', function (done) {
+                var account = {fullName: 'John Doe', username: 'email1@email.com', password: 'secret'};
+                var credentials = {username: 'notfound@email.com', password: 'badPassword'};
+                request(app)
+                    .post('/accounts/authenticate')
+                    .send(credentials)
+                    .set('Content-Type', 'application/json')
+                    .expect(404)
+                    .expect({"errors": [{"param": "username", "msg": "notfound", "value": credentials.username}]})
+                    .end(done);
+            });
+
+        });
+
         context('Check response when user is authenticated correctly.', function () {
             it('should response UnAuthorized & return account details', function (done) {
                 var account = {fullName: 'John Doe', username: 'email2@email.com', password: 'secret'};
@@ -85,8 +101,13 @@ context('Account Authentication Service',function(){
                             .send(credentials)
                             .set('Content-Type', 'application/json')
                             .expect(200)
-                            .expect({})
-                            .end(done);
+                            .end(function(err,res) {
+                                if (err) return done(err);
+                                res.body.publicId.should.match(/\b[0-9a-f]{5,40}\b/);
+                                res.body.username.should.equal(account.username);
+                                res.body.fullName.should.equal(account.fullName);
+                            });
+                            done();
                     });
             });
             models.Account.destroy({truncate:true});

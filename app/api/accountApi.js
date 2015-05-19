@@ -20,9 +20,9 @@ exports.authenticate = function(req,res,next){
                 res.json({"errors":[{"param":"username","msg":"notfound","value":req.body.username}]});
                 next();
             } else {
-                if(crypto.encryptPassword(account.salt,req.body.password)==account.password){
+                if(crypto.encryptPassword(req.body.password,account.salt)==account.password){
                     res.status(200);
-                    res.json(account);
+                    res.json(prepareAccountResponse(account,req));
                     next();
                 }else{
                     res.status(401);
