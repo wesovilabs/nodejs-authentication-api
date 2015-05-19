@@ -1,28 +1,22 @@
 # Authentication REST API
 
-TODO: Write a project description
+REST API implemented in Nodejs. This project makes use of Sequelize (ORM) and express.
 
 ## Installation
 
-TODO: Describe the installation process
+Run npm install to get dependencies
 
 ## Usage
 
-Run tests by "npm run test"
-Server can started in develop mode by "npm run dev"
+* Run tests by "npm run test"
+
+* Server can started in develop mode by "npm run dev"
 
 ## Contributing
 
 Iván Corrales Solera <developer@wesovi.com>
 
-## History
-
-
-
 ## Credits
 
-
-
-## License
-
+@May 2015
 
