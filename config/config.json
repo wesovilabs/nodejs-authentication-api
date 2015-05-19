@@ -1,0 +1,12 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./db.development.sqlite",
+    "migrationStorageTableName": "sequelize_meta"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "./db.development.sqlite",
+    "migrationStorageTableName": "sequelize_meta"
+  }
+}
