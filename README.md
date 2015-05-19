@@ -1,6 +1,8 @@
 # Authentication REST API
 
-REST API implemented in Nodejs. This project makes use of Sequelize (ORM) and express.
+Hypermedia REST API implemented in Nodejs. This project makes use of Sequelize (ORM) and express as a server.
+
+Tests are implemented with Supertest.
 
 ## Installation
 
