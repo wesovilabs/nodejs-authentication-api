@@ -1,0 +1,16 @@
+<testsuite name="Mocha Tests" tests="12" failures="1" errors="1" skipped="0" timestamp="Wed, 27 May 2015 14:34:18 GMT" time="10.615">
+<testcase classname="Account Authentication Service POST /accounts/authenticate Check response when some required fields are not sent." name="should response BAD REQUEST &amp; the error details when body is empty " time="0.035"/>
+<testcase classname="Account Authentication Service POST /accounts/authenticate Check response when some required fields are not sent." name="should response BAD REQUEST &amp; the error details when username is empty " time="0.009"/>
+<testcase classname="Account Authentication Service POST /accounts/authenticate Check response when some required fields are not sent." name="should response BAD REQUEST &amp; the error details when password is empty " time="0.017"/>
+<testcase classname="Account Authentication Service POST /accounts/authenticate Check response when credentials are not valid.." name="should response UnAuthorized &amp; return a error response" time="10.009"><failure message="timeout of 10000ms exceeded"><![CDATA[Error: timeout of 10000ms exceeded
+    at null.&lt;anonymous&gt; (/tmp/nodejs-authentication-api/node_modules/mocha/lib/runnable.js:157:19)
+    at Timer.listOnTimeout (timers.js:110:15)]]></failure></testcase>
+<testcase classname="Account Authentication Service POST /accounts/authenticate Check response when user is not registered yet.." name="should response Not found &amp; return a error response" time="0.009"/>
+<testcase classname="Account Authentication Service POST /accounts/authenticate Check response when user is authenticated correctly." name="should response UnAuthorized &amp; return account details" time="0.229"/>
+<testcase classname="Account Creation Service POST /accounts Check response when some required fields are not sent." name="should response BAD REQUEST &amp; the error details when fullName is empty " time="0.005"/>
+<testcase classname="Account Creation Service POST /accounts Check response when some required fields are not sent." name="should response BAD REQUEST &amp; the error details when username is empty " time="0.004"/>
+<testcase classname="Account Creation Service POST /accounts Check response when some required fields are not sent." name="should response BAD REQUEST &amp; the error details when username &amp; password are empty " time="0.003"/>
+<testcase classname="Account Creation Service POST /accounts Check response when even though the required fields are sent, they have some invalid format." name="should response BAD REQUEST &amp; the error details when username is not a valid email " time="0.003"/>
+<testcase classname="Account Creation Service POST /accounts Check response when account is created successfully." name="should response CREATED &amp; return a valid response" time="0.267"/>
+<testcase classname="Status Service GET /monitor/status - Test Server status Check http status code &amp; body response" name="should response 200 and all the services should be running" time="0.004"/>
+</testsuite>
